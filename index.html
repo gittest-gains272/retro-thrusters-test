@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Thrusters Test 2</title>
+    <title>Retro Thrusters | Elite Exploration Vessels</title>
     <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #4b5563;
+            --accent-gold: #c5a059; /* Premium Gold */
+            --accent-dark: ##134e4a; /* Nebula Green */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,109 +21,204 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: var(--font-family);
             line-height: 1.6;
-            color: #333333;
-            background-color: #ffffff;
+            color: var(--text-main);
+            background-color: var(--bg-color);
             font-weight: 300;
         }
         
         .container {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 5rem 2rem;
         }
         
+        /* Hero Section */
         .hero {
             text-align: center;
-            padding: 4rem 0;
+            padding: 5rem 0;
             margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 2rem auto 0;
         }
         
         h1 {
             font-size: 3.5rem;
             font-weight: 300;
-            margin-bottom: 1.5rem;
-            color: #1a1a1a;
+            margin-bottom: 1rem;
+            color: var(--text-main);
             letter-spacing: -0.03em;
         }
         
-        .subtext {
-            font-size: 1.2rem;
-            color: #777777;
-            margin-bottom: 0.75rem;
-            font-weight: 300;
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 4px;
+            margin-top: 1rem;
         }
         
-        .status {
-            font-size: 1rem;
-            color: #aaaaaa;
-            font-style: italic;
-            font-weight: 300;
+        /* Mission Section */
+        .mission {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .mission h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--accent-dark);
+        }
+
+        .mission p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 600px) {
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent-gold);
+            background: #fafafa;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--accent-dark);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
         }
         
+        /* Contact Section */
         .contact {
             padding-top: 2rem;
+            text-align: center;
         }
         
         .contact h2 {
             font-size: 1.25rem;
-            font-weight: 400;
+            font-weight: 500;
             margin-bottom: 1rem;
-            color: #333333;
-            letter-spacing: 0.02em;
+            color: var(--text-main);
         }
         
         .contact p {
-            font-size: 0.95rem;
-            color: #666666;
-            font-weight: 300;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
         }
         
         .contact a {
-            color: #5b7eea;
+            color: var(--accent-gold);
             text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
             transition: opacity 0.2s ease;
-            font-weight: 300;
+            border-bottom: 1px solid transparent;
         }
         
         .contact a:hover {
             opacity: 0.8;
-            text-decoration: underline;
+            border-bottom-color: var(--accent-gold);
         }
-        
-        hr {
-            border: 0;
-            height: 1px;
-            background: #f0f0f0;
-            margin: 3rem 0;
-        }
-        
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .container {
-                padding: 3rem 1.5rem;
-            }
+            h1 { font-size: 2.5rem; }
+            .container { padding: 3rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- Hero -->
         <section class="hero">
             <h1>Building a Ship</h1>
-            <p class="subtext">More Info Below</p>
-            <p class="status">soon</p>
+            <p class="tagline">Elite operators of high-performance exploration vessels. We navigate the unknown to yield vast fortunes for our patrons and crews.</p>
+            <span class="status-badge">Expedition Status: Preparing</span>
         </section>
         
-        <hr>
+        <!-- Mission -->
+        <section class="mission">
+            <h2>The Pursuit of Discovery</h2>
+            <p>
+                We don't just pilot ships; we engineer destiny. 
+                Our fleet is designed for the deepest frontiers, turning uncharted voids into 
+                treasure troves. Whether you seek rare artifacts or new worlds, 
+                our expert crews ensure the journey is as rewarding as the destination.
+            </p>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-card">
+                <h3>Vast Fortunes</h3>
+                <p>Proven track record of securing high-value assets in volatile sectors.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Elite Crews</h3>
+                <p>Hand-picked specialists trained for high-pressure exploration environments.</p>
+            </div>
+            <div class="feature-card">
+                <h3>High Performance</h3>
+                <p>Vessels engineered for speed, durability, and maximum payload efficiency.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Patron First</h3>
+                <p>Your investment is protected by our rigorous safety and success protocols.</p>
+            </div>
+        </section>
         
+        <hr style="border: 0; height: 1px; background: #f0f0f0; margin: 3rem 0;">
+        
+        <!-- Contact -->
         <section class="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:contact@somezingfunky.com">contact@somezingfunky.com</a></p>
+            <h2>Inquire for Expeditions</h2>
+            <p>Ready to embark? Our team is standing by to discuss your next venture.</p>
+            <a href="mailto:contact@somezingfunky.com">contact@somezingfunky.com</a>
         </section>
     </div>
 
