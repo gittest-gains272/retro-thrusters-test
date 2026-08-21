@@ -55,7 +55,7 @@
             font-size: 3rem;
             font-weight: 300;
             margin-bottom: 0.75rem;
-            color: var(--text-main);
+            color: var(--accent-dark);
             letter-spacing: -0.03em;
         }
         
@@ -64,9 +64,10 @@
             color: var(--text-muted);
             margin-bottom: 1.5rem;
             font-weight: 400;
-            max-width: 500px;
+            max-width: 600px; /* Slightly wider to accommodate longer text */
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
 
         .status-badge {
@@ -100,18 +101,12 @@
             line-height: 1.6;
         }
 
-        /* Features Grid */
+        /* Features Grid - FORCE 2x2 LAYOUT */
         .features {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr; /* Always 2 columns */
             gap: 1.5rem;
             margin-bottom: 3rem;
-        }
-
-        @media (min-width: 600px) {
-            .features {
-                grid-template-columns: 1fr 1fr;
-            }
         }
 
         .feature-card {
@@ -168,6 +163,9 @@
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .container { padding: 3rem 1.5rem; }
+            .tagline { font-size: 1.1rem; } /* Slightly larger for readability on mobile */
+            .feature-card h3 { font-size: 1rem; }
+            .feature-card p { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -176,7 +174,53 @@
     <div class="container">
         <!-- Hero -->
         <section class="hero">
-            <h1>Building a Ship</h1>
+            <h1>The Frontier Awaits</h1>
+            <p class="tagline">Elite architects and operators of high-performance exploration and expedition vessels. We navigate through the unknown to yield vast fortunes for our patrons and crews.</p>
+            <span class="status-badge">Expedition Status: Preparing</span>
+        </section>
+        
+        <!-- Mission -->
+        <section class="mission">
+            <h2>The Pursuit of Discovery</h2>
+            <p>
+                We don't just pilot ships; we engineer destiny. 
+                Our fleet is designed for the deepest frontiers, turning uncharted voids into 
+                treasure troves. Whether you seek rare artifacts or new worlds, 
+                our expert crews ensure the journey is as rewarding as the destination.
+            </p>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-card">
+                <h3>Vast Fortunes</h3>
+                <p>Proven track record of securing high-value assets in volatile sectors.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Patron First</h3>
+                <p>Your investment is protected by our rigorous safety and success protocols.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Elite Crews</h3>
+                <p>Hand-picked specialists trained for high-pressure exploration environments.</p>
+            </div>
+            <div class="feature-card">
+                <h3>High Performance</h3>
+                <p>Vessels engineered for speed, durability, and maximum payload efficiency.</p>
+            </div>
+        </section>
+        
+        <hr style="border: 0; height: 1px; background: #f0f0f0; margin: 3rem 0;">
+        
+        <!-- Contact -->
+        <section class="contact">
+            <h2>Inquire for Expeditions</h2>
+            <p>Ready to embark? Our team is standing by to discuss your next venture.</p>
+            <a href="mailto:contact@somezingfunky.com">contact@somezingfunky.com</a>
+        </section>
+    </div>
+</body>
+</html>
             <p class="tagline">Elite operators of high-performance exploration vessels. We navigate the unknown to yield vast fortunes for our patrons and crews.</p>
             <span class="status-badge">Expedition Status: Preparing</span>
         </section>
